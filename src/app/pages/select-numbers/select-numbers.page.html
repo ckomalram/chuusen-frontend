@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+      defaultHref="/"
+      text=""
+      color="secondary"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Seleccionar Números</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col  *ngFor="let item of numbers; index as i">
+          <ion-badge >{{ item }}</ion-badge>
+          <!-- <ion-chip color="primary"  outline="true"  >
+            <ion-label>{{ item }}</ion-label>
+          </ion-chip> -->
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

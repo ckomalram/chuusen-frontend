@@ -6,7 +6,13 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
-  }
+    children: [
+      {
+        path: 'select-numbers',
+        loadChildren: () => import('../select-numbers/select-numbers.module').then(m => m.SelectNumbersPageModule)
+      }
+    ]
+  },
 ];
 
 @NgModule({
