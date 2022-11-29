@@ -7,7 +7,10 @@
       color="secondary"
       ></ion-back-button>
     </ion-buttons>
-    <ion-title>Seleccionar Números</ion-title>
+    <ion-title>Números</ion-title>
+    <ion-buttons slot="end" >
+      <ion-button color="primary" (click)="clearNumbersSelected()">Limpiar</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +19,9 @@
   <ion-grid [fixed]="true">
     <ion-row>
       <ion-col  *ngFor="let item of numbers; index as i">
-          <ion-badge >{{ item }}</ion-badge>
+          <ion-badge (click)="toogleNumber(item, i)"
+          [ngClass]="{selected: item.selected}"
+          >{{ item.number | number:'2.0-0'}}</ion-badge>
           <!-- <ion-chip color="primary"  outline="true"  >
             <ion-label>{{ item }}</ion-label>
           </ion-chip> -->
@@ -26,3 +31,10 @@
   </ion-grid>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button (click)="continuar()" expand="block"  shape="round">
+      Continuar
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
