@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        color="primary"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Crear Sorteo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-border">
+  <ion-item id="custom-item" counter="true" [counterFormatter]="customCounterFormatter">
+    <ion-label position="floating">Nombre de sorteo</ion-label>
+    <ion-input placeholder="Ingrese nombre" maxlength="20"></ion-input> </ion-item
+  >
+  <ion-item>
+    <ion-label position="floating">Propietario</ion-label>
+    <ion-input value="ckomalram14" [disabled]="true"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Número disponibles</ion-label>
+    <ion-input placeholder="00-99"></ion-input>
+  </ion-item>
+  <ion-item >
+    <ion-label position="floating">Fracciones</ion-label>
+    <ion-input placeholder="5-10-15-20"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Cuota</ion-label>
+    <ion-input type="number" placeholder="0.00 USD"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Estado</ion-label>
+    <ion-input value="ACTIVO" [disabled]="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Fecha apertura</ion-label>
+    <ion-input type="date" value="11/28/2022"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Fecha cierre</ion-label>
+    <ion-input type="date" value="11/28/2022"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-checkbox slot="start"></ion-checkbox>
+    <ion-label>codigo de acceso perzonalizado</ion-label>
+  </ion-item>
+  <ion-item id="custom-item">
+    <ion-label position="floating">Codigo</ion-label>
+    <ion-input placeholder="Ingrese codigo personalizado" maxlength="20"></ion-input> </ion-item
+  >
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button (click)="continuar()" color="tertiary">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Guardar
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" >
+      <ion-button (click)="cancelar()" color="danger">
+        <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+        Cancelar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

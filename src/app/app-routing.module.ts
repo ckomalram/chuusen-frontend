@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'select-numbers',
     loadChildren: () => import('./pages/select-numbers/select-numbers.module').then( m => m.SelectNumbersPageModule)
+  },
+  {
+    path: 'create-chuusen',
+    loadChildren: () => import('./pages/create-chuusen/create-chuusen.module').then( m => m.CreateChuusenPageModule)
   }
 ];
 @NgModule({

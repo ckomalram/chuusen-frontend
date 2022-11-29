@@ -11,8 +11,8 @@ export class Tab1Page {
   constructor( private router: Router) {}
 
 
-  navigateTo(){
-    this.router.navigate(['/select-numbers']);
+  navigateTo(url: string){
+    this.router.navigate([url]);
   }
 
 }
