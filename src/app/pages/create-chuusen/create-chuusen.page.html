@@ -12,56 +12,101 @@
 </ion-header>
 
 <ion-content class="ion-no-border">
-  <ion-item id="custom-item" counter="true" [counterFormatter]="customCounterFormatter">
-    <ion-label position="floating">Nombre de sorteo</ion-label>
-    <ion-input placeholder="Ingrese nombre" maxlength="20"></ion-input> </ion-item
-  >
-  <ion-item>
-    <ion-label position="floating">Propietario</ion-label>
-    <ion-input value="ckomalram14" [disabled]="true"></ion-input>
-  </ion-item>
-  <ion-item >
-    <ion-label position="floating">Número disponibles</ion-label>
-    <ion-input placeholder="00-99"></ion-input>
-  </ion-item>
-  <ion-item >
-    <ion-label position="floating">Fracciones</ion-label>
-    <ion-input placeholder="5-10-15-20"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Cuota</ion-label>
-    <ion-input type="number" placeholder="0.00 USD"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Estado</ion-label>
-    <ion-input value="ACTIVO" [disabled]="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Fecha apertura</ion-label>
-    <ion-input type="date" value="11/28/2022"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Fecha cierre</ion-label>
-    <ion-input type="date" value="11/28/2022"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>codigo de acceso perzonalizado</ion-label>
-  </ion-item>
-  <ion-item id="custom-item">
-    <ion-label position="floating">Codigo</ion-label>
-    <ion-input placeholder="Ingrese codigo personalizado" maxlength="20"></ion-input> </ion-item
-  >
+  <form [formGroup]="chuusenForm">
+    <ion-item
+      id="custom-item"
+      counter="true"
+      [counterFormatter]="customCounterFormatter"
+    >
+      <ion-label position="floating">Nombre de sorteo</ion-label>
+      <ion-input
+        placeholder="Ingrese nombre"
+        formControlName="name"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Propietario</ion-label>
+      <ion-input value="ckomalram14" formControlName="user"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Número disponibles</ion-label>
+      <ion-input placeholder="00-99" formControlName="numeros"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fracciones</ion-label>
+      <ion-input
+        placeholder="5-10-15-20"
+        formControlName="fracciones"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cuota</ion-label>
+      <ion-input
+        type="number"
+        placeholder="0.00 USD"
+        formControlName="cuota"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Estado</ion-label>
+      <ion-select placeholder="Seleccionar estado" formControlName="estado">
+        <ion-select-option [value]="true">Activo</ion-select-option>
+        <ion-select-option [value]="false">Inactivo</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label >Apertura</ion-label>
+      <ion-datetime-button
+      datetime="apertura"
+    ></ion-datetime-button>
+
+    <ion-modal [keepContentsMounted]="true">
+      <ng-template>
+        <ion-datetime id="apertura" formControlName="apertura"
+        color="tertiary"
+        ></ion-datetime>
+      </ng-template>
+    </ion-modal>
+      <!-- <ion-input type="text" formControlName="apertura"></ion-input> -->
+    </ion-item>
+    <ion-item>
+      <ion-label >Cierre</ion-label>
+      <ion-datetime-button
+        datetime="cierre"
+      ></ion-datetime-button>
+
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime id="cierre" formControlName="cierre"></ion-datetime>
+        </ng-template>
+      </ion-modal>
+      <!-- <ion-input type="text" formControlName="cierre"></ion-input> -->
+    </ion-item>
+    <ion-item>
+      <ion-checkbox slot="start" formControlName="customcod"></ion-checkbox>
+      <ion-label>codigo de acceso perzonalizado</ion-label>
+    </ion-item>
+    <ion-item
+      id="custom-item"
+      [disabled]="!chuusenForm.controls['customcod'].value"
+    >
+      <ion-label position="floating">Codigo</ion-label>
+      <ion-input
+        placeholder="Ingrese codigo personalizado"
+        formControlName="codigo"
+      ></ion-input>
+    </ion-item>
+  </form>
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-buttons slot="start" >
+    <ion-buttons slot="start">
       <ion-button (click)="continuar()" color="tertiary">
         <ion-icon slot="start" name="save-outline"></ion-icon>
         Guardar
       </ion-button>
     </ion-buttons>
-    <ion-buttons slot="end" >
+    <ion-buttons slot="end">
       <ion-button (click)="cancelar()" color="danger">
         <ion-icon name="close-circle-outline" slot="start"></ion-icon>
         Cancelar
