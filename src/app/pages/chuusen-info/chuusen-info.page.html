@@ -83,8 +83,9 @@
     Reservar
   </ion-button>
 
+
   <!-- TODO modal para ver indicaciones -->
-  <div class="info">
+  <!-- <div class="info" >
     <p class="text-center">
       1. Si ya hizo su reserva, la información del ticket de reserva se verá en "Ver Ticket".
      </p>
@@ -97,9 +98,42 @@
      <p>
       4. Solo se puede crear 1 ticket por sorteo, asegurese de elegir los #s deseados.
     </p>
-  </div>
+  </div> -->
+  <!-- <ion-button id="open-modal" expand="block">Open Modal</ion-button> -->
+
+  <ion-modal #modal trigger="open-modal">
+    <ng-template>
+      <ion-content>
+        <ion-toolbar>
+          <ion-title>Indicaciones</ion-title>
+          <ion-buttons slot="end">
+            <ion-button color="light" (click)="modal.dismiss()">CERRAR</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+        <div class="info" >
+          <p class="text-center">
+            1. Si ya hizo su reserva, la información del ticket de reserva se verá en "Ver Ticket".
+           </p>
+           <p>
+             2. Si ya pago su ticket y no se actualizado posterior a 1 hora, contacte al creador del sorteo.
+           </p>
+           <p>
+             3. Botón de "Ver Ganadores" se habilitará cuando el creador del sorteo haya puesto la información de 1ro, 2do, 3er ganador.
+           </p>
+           <p>
+            4. Solo se puede crear 1 ticket por sorteo, asegurese de elegir bien los números deseados.
+          </p>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 
 
 
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title id="open-modal"><u>VER  INDICACIONES</u></ion-title>
+  </ion-toolbar>
+</ion-footer>

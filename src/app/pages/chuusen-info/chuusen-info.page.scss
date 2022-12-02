@@ -12,7 +12,28 @@ ion-item{
 .info{
   text-align:justify;
   padding-top: 0.1rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin: 1.5rem;
 
+}
+
+ion-footer{
+  text-align: center;
+}
+
+ion-modal {
+  --height: 50%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  // --background: rgb(14 116 144);
+  --background: #6a64ff;
+  --color: white;
 }
