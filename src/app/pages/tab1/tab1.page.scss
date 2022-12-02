@@ -1,3 +1,4 @@
+@import "/src/theme/variables.scss";
 ion-col {
   background-color: #135d54;
   border: solid 1px #fff;
@@ -7,7 +8,7 @@ ion-col {
 
 
 ion-item {
-  --background: purple;
+  --background: #5260ff;
   // --background: #19422d;
   --color: #fff;
 
@@ -17,11 +18,17 @@ ion-item {
 
   --border-radius: 20px;
 
-  --ripple-color: purple;
+  --ripple-color: #5260ff;
 
   --detail-icon-color: white;
   --detail-icon-opacity: 1;
   --detail-icon-font-size: 20px;
+
+}
+ion-label{
+  p{
+    color: #fff;
+  }
 }
 
 img{

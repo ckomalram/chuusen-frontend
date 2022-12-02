@@ -13,7 +13,11 @@ const routes: Routes = [
   {
     path: 'create-chuusen',
     loadChildren: () => import('./pages/create-chuusen/create-chuusen.module').then( m => m.CreateChuusenPageModule)
+  },  {
+    path: 'chuusen-info',
+    loadChildren: () => import('./pages/chuusen-info/chuusen-info.module').then( m => m.ChuusenInfoPageModule)
   }
+
 ];
 @NgModule({
   imports: [

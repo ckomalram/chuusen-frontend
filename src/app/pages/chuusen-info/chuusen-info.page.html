@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text=""
+        color="primary"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalles de Sorteo</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle color="success">ACTIVO</ion-card-subtitle>
+      <ion-card-title>SORTEO 123</ion-card-title>
+      <ion-card-subtitle>ckomalram123</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content class="ion-no-padding">
+        <ion-row>
+          <ion-col size="4">
+            <ion-item>
+              <ion-label>Disponibles</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>99</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="4">
+            <ion-item>
+              <ion-label>Cuota</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>$ 0.25</ion-label>
+            </ion-item></ion-col
+          >
+          <ion-col size="4">
+            <ion-item>
+              <ion-label>Fracciones</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>4</ion-label>
+            </ion-item></ion-col
+          >
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Fecha apertura</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>25/11/2022</ion-label>
+            </ion-item>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item>
+              <ion-label>Fecha cierre</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>25/12/2022</ion-label>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="warning" class="ion-margin ion-padding">
+    <ion-icon slot="end" name="ribbon-outline"></ion-icon>
+    Ver Ganadores
+  </ion-button>
+
+  <ion-button expand="full" color="secondary" class="ion-margin ion-padding">
+    <ion-icon slot="end" name="ticket-outline"></ion-icon>
+    Ver Ticket
+  </ion-button>
+
+  <ion-button expand="full" color="tertiary" class="ion-margin ion-padding"  (click)="navigateTo('/select-numbers')">
+    <ion-icon slot="end" name="hourglass-outline"></ion-icon>
+    Reservar
+  </ion-button>
+
+  <!-- TODO modal para ver indicaciones -->
+  <div class="info">
+    <p class="text-center">
+      1. Si ya hizo su reserva, la información del ticket de reserva se verá en "Ver Ticket".
+     </p>
+     <p>
+       2. Si ya pago su ticket y no se actualizado posterior a 1 hora, contacte al creador del sorteo.
+     </p>
+     <p>
+       3. Botón de "Ver Ganadores" se habilitará cuando el creador del sorteo haya puesto la información de 1ro, 2do, 3er ganador.
+     </p>
+     <p>
+      4. Solo se puede crear 1 ticket por sorteo, asegurese de elegir los #s deseados.
+    </p>
+  </div>
+
+
+
+
+</ion-content>
