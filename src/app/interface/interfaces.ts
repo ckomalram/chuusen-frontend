@@ -24,3 +24,21 @@ export interface NumberData{
   state: boolean;
   quantity: number;
 }
+
+export interface ChuusenReserveData{
+  numbers: NumberData[];
+  sorteo: any;
+  user: any;
+}
+
+export interface ChuusenConfirmData{
+  numbers?: NumberData[];
+  sorteo: any;
+  user: any;
+  ticket: string;
+  state: boolean;
+  stage: string;
+  total: number;
+  fechacreado: string;
+
+}

@@ -21,7 +21,7 @@
       <ion-col  *ngFor="let item of numbers; index as i">
           <ion-badge (click)="toogleNumber(item, i)"
           [ngClass]="{selected: item.selected}"
-          >{{ item.number | number:'2.0-0'}}</ion-badge>
+          >{{ item.value | number:'2.0-0'}}</ion-badge>
           <!-- <ion-chip color="primary"  outline="true"  >
             <ion-label>{{ item }}</ion-label>
           </ion-chip> -->

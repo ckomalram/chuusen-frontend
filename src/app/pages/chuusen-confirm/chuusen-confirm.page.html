@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Reservado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>SORTEO 123</ion-card-title>
+      <ion-card-subtitle>Creador: ckomalram123</ion-card-subtitle>
+      <ion-card-subtitle>Fecha reserva: {{ sorteoService.dataTicket.fechacreado}}</ion-card-subtitle>
+      <ion-card-subtitle>Ticket # {{ sorteoService.dataTicket.ticket}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <ion-item *ngFor="let item of sorteoService.dataTicket.numbers">
+        <ion-label>{{item.value | number:'2.0-0'}}</ion-label>
+        <ion-label slot="end">{{ item.quantity }}</ion-label>
+      </ion-item>
+
+      <ion-item >
+        <ion-label>Total: </ion-label>
+        <ion-label slot="end">$ 4.75</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="secondary" class="ion-margin ion-padding">
+    <ion-icon slot="end" name="share"></ion-icon>
+    Compartir
+  </ion-button>
+
+  <ion-button expand="full" color="primary" class="ion-margin ion-padding" (click)="returnInicio()">
+    <ion-icon slot="end" name="home"></ion-icon>
+    Volver a inicio
+  </ion-button>
+
+  <div class="info" >
+    <p class="text-center">
+      Al confirmar la reserva, la información del ticket de reserva se verá en "Ver Ticket".
+     </p>
+     <p>
+      Este ticket permanecerá en estado pendiente hasta que se confirme el pago por parte del creador del sorteo.
+     </p>
+     <p>
+      Usted tiene un maximo de 20 minutos para pagar el total del ticket al creador del sorteo.
+     </p>
+     <p>
+      Cuando haya pagado el ticket y se confirme , entrará en estado "En juego".
+    </p>
+  </div>
+</ion-content>
+

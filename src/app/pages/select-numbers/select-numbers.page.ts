@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SorteoService } from 'src/app/services/sorteo.service';
 
 @Component({
   selector: 'app-select-numbers',
@@ -10,7 +11,7 @@ export class SelectNumbersPage implements OnInit {
   numbers: any[] = [];
   limit: number = 100;
 
-  constructor() {}
+  constructor(private sorteoService: SorteoService, private router: Router) {}
 
   ngOnInit() {
 // this.numbers = [
@@ -27,7 +28,7 @@ this.initNumbers();
   }
 
   toogleNumber(dataSelected: any, index: number){
-    const number = this.numbers.find((value,index)=> value.number === dataSelected.number);
+    const number = this.numbers.find((number,index)=> number.value === dataSelected.value);
 
     console.log(number);
 
@@ -48,6 +49,10 @@ this.initNumbers();
       sorteo: {}
     }
     console.log(dataTicket);
+
+    this.sorteoService.saveChuusenNumbers(dataTicket);
+
+    this.router.navigate(['/chuusen-reserve']);
   }
 
   initNumbers(){
@@ -55,10 +60,12 @@ this.initNumbers();
     for (let index = 0; index < 100; index++) {
 
       this.numbers.push({
-        number: index,
+        value: index,
         selected: false,
+       state: true,
+
         // user: {},
-        count: 4
+        quantity: 4
       })
     }
   }

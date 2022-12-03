@@ -16,6 +16,22 @@ const routes: Routes = [
   },  {
     path: 'chuusen-info',
     loadChildren: () => import('./pages/chuusen-info/chuusen-info.module').then( m => m.ChuusenInfoPageModule)
+  },
+  {
+    path: 'chuusen-reserve',
+    loadChildren: () => import('./pages/chuusen-reserve/chuusen-reserve.module').then( m => m.ChuusenReservePageModule)
+  },
+  {
+    path: 'chuusen-confirm',
+    loadChildren: () => import('./pages/chuusen-confirm/chuusen-confirm.module').then( m => m.ChuusenConfirmPageModule)
+  },
+  {
+    path: 'chuusen-ticket',
+    loadChildren: () => import('./pages/chuusen-ticket/chuusen-ticket.module').then( m => m.ChuusenTicketPageModule)
+  },
+  {
+    path: 'chuusen-winner',
+    loadChildren: () => import('./pages/chuusen-winner/chuusen-winner.module').then( m => m.ChuusenWinnerPageModule)
   }
 
 ];

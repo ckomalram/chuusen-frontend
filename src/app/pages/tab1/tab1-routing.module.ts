@@ -5,21 +5,7 @@ import { Tab1Page } from './tab1.page';
 const routes: Routes = [
   {
     path: '',
-    component: Tab1Page,
-    children: [
-      {
-        path: 'select-numbers',
-        loadChildren: () => import('../select-numbers/select-numbers.module').then(m => m.SelectNumbersPageModule)
-      },
-      {
-        path: 'create-chuusen',
-        loadChildren: () => import('../create-chuusen/create-chuusen.module').then(m => m.CreateChuusenPageModule)
-      },
-      {
-        path: 'chuusen-info',
-        loadChildren: () => import('../chuusen-info/chuusen-info.module').then(m => m.ChuusenInfoPageModule)
-      }
-    ]
+    component: Tab1Page
   },
 ];
 
