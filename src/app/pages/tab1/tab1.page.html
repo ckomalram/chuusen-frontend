@@ -19,62 +19,42 @@
     <ion-item-divider>
       <ion-label>SORTEOS CREADOS</ion-label>
     </ion-item-divider>
-    <ion-item
-    *ngFor="let sorteo of sorteoServices.chuusenList"
-      class="ion-padding"
-      button
-      detail
-      lines="full"
-      (click)="navigateTo('/chuusen-info')"
-    >
-      <!-- <ion-thumbnail slot="start">
-      <img
-        alt="Silhouette of mountains"
-        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-      />
-    </ion-thumbnail> -->
-      <ion-label>
-        <h4>{{sorteo.name | uppercase}}</h4>
-        <h6>{{sorteo.user  | uppercase}}</h6>
-        <p>Fecha apertura {{sorteo.startdate}}</p>
-        <p>Fecha cierre {{sorteo.duedate}}</p>
-        <p>Números disponibles: {{sorteo.numbers.length}}</p>
-        <p>Cuota: {{sorteo.quota | currency}}</p>
-        <p>Fracciones: {{sorteo.fraction}}</p>
-        <p>{{sorteo.state? 'ACTIVO' : 'INACTIVO'}}</p>
-      </ion-label>
-    </ion-item>
-  </ion-item-group>
-
-  <ion-item-group>
-    <ion-item-divider>
-      <ion-label>SORTEOS AGREGADOS</ion-label>
-    </ion-item-divider>
-    <ion-item
-    *ngFor="let sorteo of sorteoServices.chuusenList"
-      class="ion-padding"
-      button
-      detail
-      lines="full"
-      (click)="navigateTo('/chuusen-info')"
-    >
-      <!-- <ion-thumbnail slot="start">
-      <img
-        alt="Silhouette of mountains"
-        src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-      />
-    </ion-thumbnail> -->
-      <ion-label>
-        <h4>{{sorteo.name | uppercase}}</h4>
-        <h6>{{sorteo.user  | uppercase}}</h6>
-        <p>Fecha apertura {{sorteo.startdate}}</p>
-        <p>Fecha cierre {{sorteo.duedate}}</p>
-        <p>Números disponibles: {{sorteo.numbers.length}}</p>
-        <p>Cuota: {{sorteo.quota | currency}}</p>
-        <p>Fracciones: {{sorteo.fraction}}</p>
-        <p>{{sorteo.state? 'ACTIVO' : 'INACTIVO'}}</p>
-      </ion-label>
-    </ion-item>
+    <ion-list>
+      <ion-item-sliding *ngFor="let sorteo of sorteoServices.chuusenList">
+        <ion-item
+          class="ion-padding"
+          button
+          detail
+          lines="full"
+          (click)="navigateTo('/chuusen-info')"
+        >
+          <!-- <ion-thumbnail slot="start">
+            <img
+              alt="Silhouette of mountains"
+              src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+            />
+          </ion-thumbnail> -->
+          <ion-label>
+            <h4>{{sorteo.name | uppercase}}</h4>
+            <h6>{{sorteo.user | uppercase}}</h6>
+            <p>Fecha apertura {{sorteo.startdate}}</p>
+            <p>Fecha cierre {{sorteo.duedate}}</p>
+            <p>Números disponibles: {{sorteo.numbers.length}}</p>
+            <p>Cuota: {{sorteo.quota | currency}}</p>
+            <p>Fracciones: {{sorteo.fraction}}</p>
+            <p>{{sorteo.state? 'ACTIVO' : 'INACTIVO'}}</p>
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="tertiary" (click)="share(sorteo)">
+            <ion-icon slot="icon-only" name="share-outline"></ion-icon>
+          </ion-item-option>
+          <ion-item-option color="danger" (click)="delete(sorteo)">
+            <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
   </ion-item-group>
 
   <!-- <ion-item-group>
@@ -115,18 +95,29 @@
       <ion-toolbar>
         <ion-title>Codigo de sorteo</ion-title>
         <ion-buttons slot="end">
-          <ion-button color="light" (click)="modal.dismiss()">CERRAR</ion-button>
+          <ion-button color="light" (click)="modal.dismiss()"
+            >CERRAR</ion-button
+          >
         </ion-buttons>
       </ion-toolbar>
-      <div class="info" >
-
-        <ion-item class="info-item" >
+      <div class="info">
+        <ion-item class="info-item">
           <ion-label position="floating">Ingrese codigo:</ion-label>
-          <ion-input placeholder="A1B2C3D4E5F6G7" [(ngModel)]="codigo"></ion-input>
+          <ion-input
+            placeholder="A1B2C3D4E5F6G7"
+            [(ngModel)]="codigo"
+          ></ion-input>
         </ion-item>
-        <ion-button expand="block" fill="outline"  size="small" (click)="validarCodigo()" class="ion-padding">
+        <ion-button
+          expand="block"
+          fill="outline"
+          size="small"
+          (click)="validarCodigo()"
+          class="ion-padding"
+        >
           <ion-icon slot="start" name="save"></ion-icon>
-          Confirmar</ion-button>
+          Confirmar</ion-button
+        >
       </div>
     </ion-content>
   </ng-template>

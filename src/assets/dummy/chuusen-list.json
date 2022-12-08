@@ -41,5 +41,48 @@
     "startdate": "11/29/2022",
     "duedate": "12/23/2022",
     "deletedate":null
+  },
+  {
+    "name": "sorteo basket",
+    "user": "ckomalram",
+    "numbers": [
+      {
+        "value": 0,
+        "selected": false,
+        "state": true,
+        "quantity": 4
+      },
+      {
+        "value": 1,
+        "selected": false,
+        "state": true,
+        "quantity": 4
+      },
+      {
+        "value": 2,
+        "selected": false,
+        "state": true,
+        "quantity": 4
+      },
+      {
+        "value": 3,
+        "selected": false,
+        "state": true,
+        "quantity": 4
+      },
+      {
+        "value": 4,
+        "selected": false,
+        "state": true,
+        "quantity": 4
+      }
+    ],
+    "fraction": 4,
+    "quota": 0.25,
+    "code": "FantasmaDeSparta",
+    "state": true,
+    "startdate": "11/29/2022",
+    "duedate": "12/23/2022",
+    "deletedate":null
   }
 ]
