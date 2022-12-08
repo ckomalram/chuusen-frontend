@@ -10,6 +10,8 @@ import { SorteoService } from '../../services/sorteo.service';
 })
 export class Tab1Page implements OnInit {
 
+  codigo = null;
+
 
 
   constructor(public sorteoServices: SorteoService,
@@ -21,6 +23,10 @@ export class Tab1Page implements OnInit {
     }
   navigateTo(url: string){
     this.router.navigate([url]);
+  }
+
+  validarCodigo(){
+    console.log(this.codigo);
   }
 
 }
