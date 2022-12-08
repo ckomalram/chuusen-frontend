@@ -6,7 +6,6 @@ ion-col {
   text-align: center;
 }
 
-
 ion-item:not(.info-item) {
   --background: #5260ff;
   // --background: #19422d;
@@ -23,30 +22,29 @@ ion-item:not(.info-item) {
   --detail-icon-color: white;
   --detail-icon-opacity: 1;
   --detail-icon-font-size: 20px;
-
 }
-ion-label{
-  p{
+ion-label {
+  p {
     color: #fff;
   }
 }
 
-img{
+img {
   border-radius: 1rem;
 }
 
-.info{
-  text-align:justify;
+.info {
+  text-align: justify;
   padding-top: 0.1rem;
   font-size: 1rem;
   margin: 1.5rem;
 }
 
-
 ion-modal {
   --height: 30%;
   --border-radius: 16px;
-  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 ion-modal::part(backdrop) {
